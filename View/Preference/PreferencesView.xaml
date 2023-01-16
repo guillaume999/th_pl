@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="th_pl.View.Preference.PreferencesView"
+             Title="PreferencesView"
+             xmlns:components="clr-namespace:th_pl.View.Logbook.Component"
+             xmlns:components_login="clr-namespace:th_pl.View.Preference.Component">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <!-- 1ere Ligne générale -->
+        <components:LogBookTopMenu Grid.Row="0"/>
+
+        <!-- 2eme Ligne générale -->
+        <ContentView Grid.Row="1" x:Name="PreferencesBody"/>
+
+    </Grid>
+</ContentPage>

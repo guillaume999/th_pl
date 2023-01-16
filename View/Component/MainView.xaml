@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="th_pl.View.Component.MainView">
+
+
+    <ScrollView
+            BackgroundColor="#5992F5"
+            Margin="0,5,0,5">
+
+        <Grid RowSpacing="10"
+                    ColumnSpacing="30"
+                    BackgroundColor="#416CB5"
+                    Padding="20,20,20,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="160" />
+                <!--0-->
+                <RowDefinition Height="10" />
+                <RowDefinition Height="160" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="160" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Séparateur de ligne centrale -->
+            <Frame
+                        CornerRadius="5"
+                        BackgroundColor="Grey"
+                        BorderColor="Gray"
+                        HasShadow="True" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+            </Frame>
+            <Frame
+                        CornerRadius="5"
+                        BackgroundColor="Grey"
+                        BorderColor="Gray"
+                        HasShadow="True" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
+            </Frame>
+            <!-- 1e ligne centrale -->
+            <Frame
+                        CornerRadius="15" HasShadow="True" Grid.Row="0" Grid.Column="0">
+                <Label
+                            Text="COURS THEORIQUE" 
+                            VerticalTextAlignment="Center"
+                            HorizontalTextAlignment="Center"
+                            TextColor="Black"/>
+            </Frame>
+            <Frame
+                        CornerRadius="15" HasShadow="True" Grid.Row="0" Grid.Column="1">
+                <Label
+                            Text="CONSEILS"
+                            VerticalTextAlignment="Center"
+                            HorizontalTextAlignment="Center"
+                            TextColor="Black"/>
+            </Frame>
+            <!-- 2e ligne centrale -->
+            <Frame
+                        CornerRadius="15" HasShadow="True" Grid.Row="2" Grid.Column="1">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_Logbook"/>
+                </Frame.GestureRecognizers>
+                <Label
+                            Text="LOG BOOK"
+                            VerticalTextAlignment="Center"
+                            HorizontalTextAlignment="Center"
+                            TextColor="Black"/>
+            </Frame>
+            <!-- 3e ligne centrale -->
+            <Frame
+                        CornerRadius="15" HasShadow="True" Grid.Row="4" Grid.Column="0" AutomationId="set_login">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_Set_Login"/>
+                </Frame.GestureRecognizers>
+                <Label
+                            Text="Set LOGIN"
+                    x:Name="LAAABEL"
+                            VerticalTextAlignment="Center"
+                            HorizontalTextAlignment="Center"
+                            TextColor="Black"/>
+            </Frame>
+            <Frame
+                        CornerRadius="15" HasShadow="True" Grid.Row="4" Grid.Column="1" AutomationId="delete_login">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_Delete_Login"/>
+                </Frame.GestureRecognizers>
+                <Label
+                            Text="Delete LOGIN"
+                            VerticalTextAlignment="Center"
+                            HorizontalTextAlignment="Center"
+                            TextColor="Black"/>
+            </Frame>
+        </Grid>
+    </ScrollView>
+</ContentView>

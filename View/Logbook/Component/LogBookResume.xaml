@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="th_pl.View.Logbook.Component.LogBookResume">
+    
+    <ScrollView Grid.Row="1"
+                        BackgroundColor="#5992F5"
+                        Margin="0,5,0,5">
+        <StackLayout Margin="15">
+            <Label Text="Résumé de votre expérience de plongeur"
+                           HorizontalTextAlignment="Center"
+                           FontSize="25"
+                           Margin="0,0,0,5"/>
+            <StackLayout BackgroundColor="Aquamarine"
+                                 Padding="5">
+                <Frame BorderColor="Black"
+                               Padding="5">
+                    <StackLayout Spacing="15">
+                        <StackLayout Orientation="Horizontal"
+                                             Spacing="15">
+                            <BoxView Color="Red"
+                                             WidthRequest="40" />
+                            <Label Text="Date Dernière plongée :"
+                                           FontSize="18"
+                                           VerticalOptions="Center" />
+                        </StackLayout>
+                        <Label Text="12/12/2022"
+                                       FontSize="18"
+                                       HorizontalTextAlignment="End"/>
+                    </StackLayout>
+                </Frame>
+                <Frame BorderColor="Black"
+                               Padding="5">
+                    <StackLayout Spacing="15">
+                        <StackLayout Orientation="Horizontal"
+                                             Spacing="15">
+                            <BoxView Color="Red"
+                                             WidthRequest="40" />
+                            <Label Text="Nombre de plongées :  "
+                                           FontSize="18"
+                                           VerticalOptions="Center" />
+                        </StackLayout>
+                        <Label Text="34"
+                                       FontSize="18"
+                                       HorizontalTextAlignment="End"/>
+                    </StackLayout>
+                </Frame>
+                <Frame BorderColor="Black"
+                               Padding="5">
+                    <StackLayout Spacing="15">
+                        <StackLayout Orientation="Horizontal"
+                                             Spacing="15">
+                            <BoxView Color="Red"
+                                             WidthRequest="40" />
+                            <Label Text="Temps d'immersion le plus long :"
+                                           FontSize="18"
+                                           VerticalOptions="Center" />
+                        </StackLayout>
+                        <Label Text="34"
+                                       FontSize="18"
+                                       HorizontalTextAlignment="End"/>
+                    </StackLayout>
+                </Frame>
+                <Frame BorderColor="Black"
+                               Padding="5">
+                    <StackLayout Spacing="15">
+                        <StackLayout Orientation="Horizontal"
+                                             Spacing="15">
+                            <BoxView Color="Red"
+                                             WidthRequest="40" />
+                            <Label Text="Temps d'immersion total :"
+                                           Margin="15,0,5,5"
+                                           HorizontalOptions="FillAndExpand"
+                                           FontSize="18"
+                                           VerticalOptions="Center" />
+                        </StackLayout>
+                        <Label Text="34"
+                                       FontSize="18"
+                                       HorizontalTextAlignment="End"/>
+                    </StackLayout>
+                </Frame>
+                <Frame BorderColor="Black"
+                               Padding="5">
+                    <StackLayout Spacing="15">
+                        <StackLayout Orientation="Horizontal"
+                                             Spacing="15">
+                            <BoxView Color="Red"
+                                             WidthRequest="40" />
+                            <Label Text="Temps d'immersion total avec mélange :"
+                                           Margin="15,0,5,5"
+                                           HorizontalOptions="FillAndExpand"
+                                           FontSize="18"
+                                           VerticalOptions="Center" />
+                        </StackLayout>
+                        <Label Text="34"
+                                       FontSize="18"
+                                       HorizontalTextAlignment="End"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentView>

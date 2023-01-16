@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="th_pl.View.Logbook.Component.LogBookBottomMenu">
+    <ContentView.Content>
+
+        <Grid     BackgroundColor="AliceBlue"
+                  ColumnSpacing="5">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="33*"/>
+                <ColumnDefinition Width="33*"/>
+                <ColumnDefinition Width="33*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Grid Grid.Row="0" Grid.Column="0">
+                <BoxView Color="#D0EDFF" />
+                <Image
+                        Source="LogBook/stats.png"
+                        HeightRequest="40"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Start"
+                        Margin="0,9,0,0">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+
+            <Grid Grid.Row="0" Grid.Column="1">
+                <BoxView Color="#D0EDFF" />
+                <Image
+                        Source="LogBook/list.png"
+                        HeightRequest="40"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Start"
+                        Margin="0,7,0,0">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+
+
+            <Grid Grid.Row="0" Grid.Column="2">
+                <BoxView Color="#D0EDFF" />
+                <Image
+                        Source="LogBook/add.png"
+                        HeightRequest="40"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Start"
+                        Margin="0,9,0,0">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+
+
+
+        </Grid>
+    </ContentView.Content>
+</ContentView>
