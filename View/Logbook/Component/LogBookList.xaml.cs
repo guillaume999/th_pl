@@ -5,7 +5,7 @@ namespace th_pl.View.Logbook.Component;
 
 public partial class LogBookList : ContentView
 {
-	private LogBookListViewModel ViewModel;
+	private readonly LogBookListViewModel ViewModel;
 
 	public LogBookList()
 	{
