@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace th_pl.Model
 {
-    public class BaseModel : ObservableObject
-    {
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
-    }
+	public class BaseModel : ObservableObject
+	{
+		[PrimaryKey, AutoIncrement]
+		public int Id { get; set; }
+	}
 }

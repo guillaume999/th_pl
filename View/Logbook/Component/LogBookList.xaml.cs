@@ -16,7 +16,12 @@ public partial class LogBookList : ContentView
 	private async void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
 	{
 		var diveSelected = e.Item as DiveModel;
-		ViewModel.SetDiveModel(diveSelected);
-		await Navigation.PushModalAsync(new LogBookDiveDetails());
+		ViewModel.SetCurrentDiveCommand.Execute(diveSelected);
+		await Navigation.PushAsync(new LogBookDiveDetails() { BindingContext = ViewModel });
+	}
+
+	private void ContentView_Loaded(object sender, EventArgs e)
+	{
+		ViewModel.GetListCommand.Execute(null);
 	}
 }

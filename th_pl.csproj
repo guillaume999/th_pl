@@ -51,6 +51,9 @@
 	<ItemGroup>
 	  <None Remove="Resources\Images\home_bleu.png" />
 	  <None Remove="Resources\Images\home_noir.png" />
+	  <None Remove="Resources\Images\LogBook\add.png" />
+	  <None Remove="Resources\Images\LogBook\list.png" />
+	  <None Remove="Resources\Images\LogBook\stats.png" />
 	  <None Remove="Resources\Images\logos2mini.png" />
 	  <None Remove="Resources\Images\padi.png" />
 	  <None Remove="Resources\Images\pref_param.png" />
@@ -129,6 +132,12 @@
 	<ItemGroup>
 	  <Folder Include="Model\" />
 	  <Folder Include="Repository\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiImage Include="Resources\Images\LogBook\add.png" />
+	  <MauiImage Include="Resources\Images\LogBook\list.png" />
+	  <MauiImage Include="Resources\Images\LogBook\stats.png" />
 	</ItemGroup>
 
 </Project>

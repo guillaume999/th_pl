@@ -1,10 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using System;
-using System.Collections.Generic;
+using CommunityToolkit.Mvvm.Input;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Input;
 using th_pl.Model;
 using th_pl.Repository;
 
@@ -14,19 +11,43 @@ namespace th_pl.ViewModel
     // et le detail d'un DiveModel
     public class LogBookListViewModel : ObservableObject
     {
-        public ObservableCollection<DiveModel> Dives { get; set; }
+        private ObservableCollection<DiveModel> dives;
+        public ObservableCollection<DiveModel> Dives
+        {
+            get => dives;
+            set => SetProperty(ref dives, value);
+        }
 
         private DiveRepository Repository { get; set; } = new();
 
-        public DiveModel CurrentDive { get; set; } = new();
+        private DiveModel currentDive;
+        public DiveModel CurrentDive
+        {
+            get => currentDive;
+            set => SetProperty(ref currentDive, value);
+        }
+
+        public ICommand GetListCommand { get; set; }
+
+        public ICommand SetCurrentDiveCommand { get; set; }
 
         public LogBookListViewModel()
         {
-            var list = Repository.GetList().GetAwaiter().GetResult();
-			Dives = new ObservableCollection<DiveModel>(list);
+            GetListCommand = new RelayCommand(async () => await GetList());
+            SetCurrentDiveCommand = new RelayCommand<DiveModel>(SetDiveModel);
+		}
+
+		private async Task GetList()
+        {
+            //Repository.SeedData();
+            var list = await Repository.GetList();
+            if(list != null)
+			{
+				Dives = new ObservableCollection<DiveModel>(list);
+			}
         }
 
-        public void SetDiveModel(DiveModel diveModel)
+		private void SetDiveModel(DiveModel diveModel)
         {
             CurrentDive = diveModel;
         }

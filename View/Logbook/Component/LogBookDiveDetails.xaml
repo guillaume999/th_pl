@@ -2,21 +2,25 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="th_pl.View.Logbook.Component.LogBookDiveDetails"
-             Title="LogBookDiveDetails"
-             xmlns:viewModels="clr-namespace:th_pl.ViewModel">
-
-    <ContentPage.BindingContext>
-        <viewModels:LogBookListViewModel/>
-    </ContentPage.BindingContext>
-
-    <VerticalStackLayout>
+             Title="LogBookDiveDetails">
+    
+    <StackLayout>
         <Label 
-            Text="{Binding CurrentDive.Duree}"
+            Text="{Binding CurrentDive.DivespotLocalisation}"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center"
+            BackgroundColor="Beige"/>
         <Label 
-            Text="{Binding CurrentDive.Moniteur}"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+            Text="{Binding CurrentDive.Date}"
+            VerticalOptions="End" 
+            HorizontalOptions="Center"
+        BackgroundColor="Beige"/>
+        <Label 
+            Text="{Binding CurrentDive.ObservedSpecies}"
+            VerticalOptions="Start" 
+            HorizontalOptions="Center"
+            BackgroundColor="Beige"
+            />
+        
+    </StackLayout>
 </ContentPage>

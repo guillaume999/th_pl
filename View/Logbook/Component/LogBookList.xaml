@@ -2,17 +2,21 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="th_pl.View.Logbook.Component.LogBookList"
-             xmlns:viewModels="clr-namespace:th_pl.ViewModel">
+             xmlns:viewModels="clr-namespace:th_pl.ViewModel"
+             Loaded="ContentView_Loaded">
+    
     <ContentView.BindingContext>
         <viewModels:LogBookListViewModel/>
     </ContentView.BindingContext>
-    
     
     <VerticalStackLayout>
         <Label 
             Text="LIST PAGE"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        
+        <Button Text="Get List"
+                 Command="{Binding GetListCommand}"/>
 
         <ListView ItemsSource="{Binding Dives}"
                   ItemTapped="ListView_ItemTapped">
@@ -21,7 +25,7 @@
                     <ViewCell>
                         <StackLayout>
                             <Label Text="{Binding Date}"/>
-                            <Label Text="{Binding Divecenterlocalisation}"/>
+                            <Label Text="{Binding DivespotLocalisation}"/>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

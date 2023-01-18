@@ -1,4 +1,6 @@
-﻿namespace th_pl;
+﻿using th_pl.Repository;
+
+namespace th_pl;
 
 public static class MauiProgram
 {
