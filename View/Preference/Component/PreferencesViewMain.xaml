@@ -24,7 +24,7 @@
                 </Grid.ColumnDefinitions>
 
 
-                <!-- Zero ligne -->
+                <!-- Zero ligne CONSERVER LES LOGIN -->
                 <Frame Grid.Row="0" Grid.ColumnSpan="2" Margin="10,2"/>
                 <Switch IsToggled="{Binding DicoPref[hasLogin]}"
                     Grid.Row="0"  Toggled="Switch_Toggled_hasLogin"/>
@@ -32,12 +32,19 @@
                 <Label Grid.Row="0" Grid.Column="1" Text="Sauvegarder identifiants sur le téléphone"
                        VerticalTextAlignment="Center"
                        Margin="20,15,0,5"/>
-                <!-- 1ere ligne -->
+                <!-- 1ere ligne MODIFIER LES IDENTIFIANTS -->
                 <Button Grid.Row="1" Grid.ColumnSpan="2" Text="Modifier identifiants"
                         Margin="10"/>
-                <!-- 2e Ligne -->
+                <!-- 2e Ligne AUTORISER CONNEXION INTERNET -->
                 <Frame Grid.Row="2" Grid.ColumnSpan="2" Margin="10,2"/>
                 <Switch IsToggled="{Binding DicoPref[hasConnexion]}"
+                    Grid.Row="2" Toggled="Switch_Toggled_hasConnexion"/>
+                <Label Grid.Row="2" Grid.Column="1" Text="Autoriser à se connecter à internet"
+                       VerticalTextAlignment="Center"
+                       Margin="20,15,0,5"/>
+                <!-- 3e Ligne PROFIL PUBLIC (SAUVEGARDER SUR BDD INTERNET) -->
+                <Frame Grid.Row="2" Grid.ColumnSpan="2" Margin="10,2"/>
+                <Switch IsToggled="True"
                     Grid.Row="2" Toggled="Switch_Toggled_hasConnexion"/>
                 <Label Grid.Row="2" Grid.Column="1" Text="Autoriser à se connecter à internet"
                        VerticalTextAlignment="Center"

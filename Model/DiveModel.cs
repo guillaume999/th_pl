@@ -18,6 +18,14 @@ namespace th_pl.Model
             set => SetProperty(ref divecenter, value);
         }
 
+        // Propriété
+        private string divecenterlocalisation = string.Empty;
+        public string Divecenterlocalisation
+        {
+            get => divecenterlocalisation;
+            set => SetProperty(ref divecenterlocalisation, value);
+        }
+
         // Propriété je voulais le mettre en "int"
         private string bateau = string.Empty;
         public string Bateau
@@ -77,11 +85,11 @@ namespace th_pl.Model
 
 
         // Propriété
-        private string equipementdiver = string.Empty;
-        public string Equipementdiver
+        private string diverequipement = string.Empty;
+        public string Diverequipement
         {
-            get => equipementdiver;
-            set => SetProperty(ref equipementdiver, value);
+            get => diverequipement;
+            set => SetProperty(ref diverequipement, value);
         }
 
         // Propriété
