@@ -67,22 +67,6 @@ namespace th_pl.Model
             set => SetProperty(ref duree, value);
         }
 
-        // Propriété
-        private string divespotname = string.Empty;
-        public string Divespotname
-        {
-            get => divespotname;
-            set => SetProperty(ref divespotname, value);
-        }
-
-        // Propriété
-        private string divespotlocalisation = string.Empty;
-        public string Divespotlocalisation
-        {
-            get => divespotlocalisation;
-            set => SetProperty(ref divespotlocalisation, value);
-        }
-
 
         // Propriété
         private string diverequipement = string.Empty;
