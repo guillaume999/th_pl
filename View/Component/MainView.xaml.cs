@@ -2,6 +2,7 @@ using th_pl.Tools;
 using th_pl.ViewModel;
 using th_pl.View;
 using th_pl.View.Logbook;
+using th_pl.View.Bestiaire;
 
 namespace th_pl.View.Component;
 
@@ -25,5 +26,10 @@ public partial class MainView : ContentView
     private async void TapGestureRecognizer_Tapped_Logbook(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new LogBookView());
+    }
+
+    private async void TapGestureRecognizer_Tapped_Bestiaire(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new BestiaireView());
     }
 }

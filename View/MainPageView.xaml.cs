@@ -11,6 +11,7 @@ public partial class MainPageView : ContentPage
     public MainPageView()
     {
         InitializeComponent();
+        // Affichage CONTENT VIEW CENTRALE
         var mainView = new MainView();
         MainBody.Content = mainView;
         ImageBottomMenuChange.imageMenuChange += ImageBottomMenuChange_imageMenuChange;

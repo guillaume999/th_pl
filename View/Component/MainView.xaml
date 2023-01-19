@@ -19,6 +19,8 @@
                 <RowDefinition Height="160" />
                 <RowDefinition Height="10" />
                 <RowDefinition Height="160" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="160" />
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
@@ -38,6 +40,12 @@
                         BackgroundColor="Grey"
                         BorderColor="Gray"
                         HasShadow="True" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
+            </Frame>
+            <Frame
+                        CornerRadius="5"
+                        BackgroundColor="Grey"
+                        BorderColor="Gray"
+                        HasShadow="True" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2">
             </Frame>
             <!-- 1e ligne centrale -->
             <Frame
@@ -70,7 +78,19 @@
             </Frame>
             <!-- 3e ligne centrale -->
             <Frame
-                        CornerRadius="15" HasShadow="True" Grid.Row="4" Grid.Column="0" AutomationId="set_login">
+                        CornerRadius="15" HasShadow="True" Grid.Row="4" Grid.Column="0">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_Bestiaire"/>
+                </Frame.GestureRecognizers>
+                <Label
+                            Text="BESTIAIRE" 
+                            VerticalTextAlignment="Center"
+                            HorizontalTextAlignment="Center"
+                            TextColor="Black"/>
+            </Frame>
+            <!-- 4e ligne centrale -->
+            <Frame
+                        CornerRadius="15" HasShadow="True" Grid.Row="6" Grid.Column="0" AutomationId="set_login">
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_Set_Login"/>
                 </Frame.GestureRecognizers>
@@ -82,7 +102,7 @@
                             TextColor="Black"/>
             </Frame>
             <Frame
-                        CornerRadius="15" HasShadow="True" Grid.Row="4" Grid.Column="1" AutomationId="delete_login">
+                        CornerRadius="15" HasShadow="True" Grid.Row="6" Grid.Column="1" AutomationId="delete_login">
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_Delete_Login"/>
                 </Frame.GestureRecognizers>

@@ -15,9 +15,9 @@ namespace th_pl.Repository
             var currentData = await GetList();
             if (currentData.Count == 0)
             {
-                await Insert(new DiveModel() { Id = 1, Date = DateTime.Now, Divespotlocalisation = "Côte Atlantique - TEST", ObservedSpecies = "Baleine - TEST" });
-                await Insert(new DiveModel() { Id = 2, Date = DateTime.Now, Divespotlocalisation = "Corse - TEST", ObservedSpecies = "Tortue - TEST" });
-                await Insert(new DiveModel() { Id = 3, Date = DateTime.Now, Divespotlocalisation = "Côte bretonne - TEST", ObservedSpecies = "Requin - TEST" });
+                await Insert(new DiveModel() { Id = 1, Date = DateTime.Now });
+                await Insert(new DiveModel() { Id = 2, Date = DateTime.Now });
+                await Insert(new DiveModel() { Id = 3, Date = DateTime.Now });
             }
         }
     }
