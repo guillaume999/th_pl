@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace th_pl.Model
 {
-    public class ObservableSpeciesImage : BaseModel
+    public class ObservableSpeciesImageModel : BaseModel
     {
         // Propriété
         private string observableSpeciesImageLink = string.Empty;

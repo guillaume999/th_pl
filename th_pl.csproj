@@ -49,6 +49,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\Bestiaire\add.png" />
+	  <None Remove="Resources\Images\Bestiaire\list.png" />
+	  <None Remove="Resources\Images\Bestiaire\valid.png" />
 	  <None Remove="Resources\Images\home_bleu.png" />
 	  <None Remove="Resources\Images\home_noir.png" />
 	  <None Remove="Resources\Images\logos2mini.png" />
@@ -57,6 +60,12 @@
 	  <None Remove="Resources\Images\profil_bleu2_add.png" />
 	  <None Remove="Resources\Images\profil_noir.png" />
 	  <None Remove="Resources\Images\profil_noir_add.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiImage Include="Resources\Images\Bestiaire\add.png" />
+	  <MauiImage Include="Resources\Images\Bestiaire\list.png" />
+	  <MauiImage Include="Resources\Images\Bestiaire\valid.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -70,16 +79,25 @@
 	  <MauiXaml Update="View\Bestiaire\BestiaireView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="View\Bestiaire\Component\BestiaireAdd.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\Bestiaire\Component\BestiaireBottomMenu.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\Bestiaire\Component\BestiaireBottomPub.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="View\Bestiaire\Component\BestiaireDetails.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\Bestiaire\Component\BestiaireMain.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\Bestiaire\Component\BestiaireTopMenu.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Bestiaire\Component\BestiaireValid.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\Component\MainBottomMenu.xaml">

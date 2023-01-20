@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace th_pl.Model
 {
-    public class ObservableSpeciesDescription : BaseModel
+    public class ObservableSpeciesDescriptionModel : BaseModel
     {
         // Propriété
         private string observableSpeciesDescriptionLink = string.Empty;

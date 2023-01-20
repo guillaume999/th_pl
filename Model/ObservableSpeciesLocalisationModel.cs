@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace th_pl.Model
 {
-    public class ObservableSpeciesLocalisation : BaseModel
+    public class ObservableSpeciesLocalisationModel : BaseModel
     {
         // Propriété
         // Point GPS
