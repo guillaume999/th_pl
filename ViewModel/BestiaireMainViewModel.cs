@@ -37,7 +37,7 @@ namespace th_pl.ViewModel
         public BestiaireMainViewModel()
         {
             GetListCommand = new RelayCommand(async () => await GetList());
-            SetCurrentObservableSpeciesCommand = new RelayCommand<ObservableSpeciesModel>(SetObservableSpeciesModel);
+            //SetCurrentObservableSpeciesCommand = new RelayCommand<ObservableSpeciesModel>(SetObservableSpeciesModel);
         }
 
         private async Task GetList()

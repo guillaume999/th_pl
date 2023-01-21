@@ -10,13 +10,13 @@ public partial class BestiaireMain : ContentView
     public BestiaireMain()
 	{
 		InitializeComponent();
-        ViewModel = BindingContext as BestiaireMainViewModel;
+        //ViewModel = BindingContext as BestiaireMainViewModel;
     }
     private async void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
     {
-        var observableSpeciesSelected = e.Item as ObservableSpeciesModel;
-        ViewModel.SetCurrentObservableSpeciesCommand.Execute(observableSpeciesSelected);
-        await Navigation.PushAsync(new BestiaireDetails() { BindingContext = ViewModel });
+    //    var observableSpeciesSelected = e.Item as ObservableSpeciesModel;
+    //    ViewModel.SetCurrentObservableSpeciesCommand.Execute(observableSpeciesSelected);
+    //    await Navigation.PushAsync(new BestiaireDetails() { BindingContext = ViewModel });
     }
 
     private void ContentView_Loaded(object sender, EventArgs e)
