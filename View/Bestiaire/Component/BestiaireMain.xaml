@@ -2,32 +2,49 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="th_pl.View.Bestiaire.Component.BestiaireMain"
-             xmlns:viewModels="clr-namespace:th_pl.ViewModel"
-             Loaded="ContentView_Loaded">
-
-    <ContentView.BindingContext>
-        <viewModels:BestiaireMainViewModel/>
-    </ContentView.BindingContext>
-
-    <VerticalStackLayout>
-        <Label 
-            Text="LIST PAGE"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+             xmlns:models="clr-namespace:th_pl.Model">
 
 
-        <ListView ItemsSource="{Binding Species}"
-                  ItemTapped="ListView_ItemTapped">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout>
-                            <Label Text="{Binding ObservableSpeciesName}"/>
-                        </StackLayout>
-                    </ViewCell>
+
+    <Grid RowDefinitions="*,Auto">
+        <CollectionView 
+                  VerticalOptions="Fill"
+                  ItemsSource="{Binding Species}"
+                  SelectionMode="Single"
+                  SelectionChanged="CollectionView_SelectionChanged">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:ObservableSpeciesModel">
+                    <Grid ColumnDefinitions="*, Auto" Padding="20">
+                        <Label Text="{Binding ObservableSpeciesName}"
+                                   VerticalTextAlignment="Center"/>
+                        <Label Text="✔️"
+                                   Grid.Column="1"
+                                   VerticalTextAlignment="Center"
+                                   IsVisible="true"/>
+                    </Grid>
                 </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Grid.Row="1" Text="Add New Item" Clicked="OnItemAdded"
+                Margin="20"/>
+    </Grid>
 
-    </VerticalStackLayout>
+
+    <!--<VerticalStackLayout>
+        <Button Clicked="AddAccountClicked" Text="Add account"/>
+        <Button Clicked="UpdateAccountClicked" Text="Update account"/>
+        <Button Clicked="DeleteAccountClicked" Text="Delete account"/>
+        <Button Clicked="Filter1AccountClicked" Text="Accounts with positive balance"/>
+        <Button Clicked="Filter2AccountClicked" Text="Accounts with zero balance"/>
+        <CollectionView x:Name="collectionView" SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout>
+                        <Label Text="{Binding Email}" />
+                        <Label Text="{Binding Balance}" />
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>-->
 </ContentView>

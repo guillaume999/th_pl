@@ -1,26 +1,59 @@
 using th_pl.ViewModel;
 using th_pl.Model;
 using th_pl.View.Bestiaire.Component;
+using System.Collections.ObjectModel;
+using th_pl.Repository;
+using Microsoft.Maui.Controls;
 
 namespace th_pl.View.Bestiaire.Component;
 
 public partial class BestiaireMain : ContentView
 {
-    private readonly BestiaireMainViewModel ViewModel;
+    //private readonly BestiaireMainViewModel ViewModel;
+    ObservableSpeciesRepository database;
+    public ObservableCollection<ObservableSpeciesModel> Species { get; set; } = new();
     public BestiaireMain()
 	{
 		InitializeComponent();
-        //ViewModel = BindingContext as BestiaireMainViewModel;
-    }
-    private async void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
-    {
-    //    var observableSpeciesSelected = e.Item as ObservableSpeciesModel;
-    //    ViewModel.SetCurrentObservableSpeciesCommand.Execute(observableSpeciesSelected);
-    //    await Navigation.PushAsync(new BestiaireDetails() { BindingContext = ViewModel });
+        database = new ObservableSpeciesRepository();
+        BindingContext = this;
     }
 
-    private void ContentView_Loaded(object sender, EventArgs e)
+    //protected override async void OnNavigatedTo(NavigatedToEventArgs args)
+    //{
+    //    base.OnNavigatedTo(args);
+    //    var items = await database.GetItemsAsync();
+    //    MainThread.BeginInvokeOnMainThread(() =>
+    //    {
+    //        Species.Clear();
+    //        foreach (var item in items)
+    //            Species.Add(item);
+
+    //    });
+    //}
+
+
+
+    async void OnItemAdded(object sender, EventArgs e)
     {
-        ViewModel.GetListCommand.Execute(null);
+        var species = await database.GetItemsAsync();
+        MainThread.BeginInvokeOnMainThread(() =>
+        {
+            Species.Clear();
+            foreach (var item in species)
+                Species.Add(item);
+
+        });
+    }
+
+    private async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        if (e.CurrentSelection.FirstOrDefault() is not ObservableSpeciesModel item)
+            return;
+
+        await Shell.Current.GoToAsync(nameof(BestiaireDetails), true, new Dictionary<string, object>
+        {
+            ["Item"] = item
+        });
     }
 }
