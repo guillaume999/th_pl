@@ -37,13 +37,14 @@ public partial class BestiaireMain : ContentView
     async void OnItemAdded(object sender, EventArgs e)
     {
         var species = await database.GetItemsAsync();
-        MainThread.BeginInvokeOnMainThread(() =>
-        {
-            Species.Clear();
-            foreach (var item in species)
-                Species.Add(item);
+        var huhu = "huhu";
+        //MainThread.BeginInvokeOnMainThread(() =>
+        //{
+        //    Species.Clear();
+        //    foreach (var item in species)
+        //        Species.Add(item);
 
-        });
+        //});
     }
 
     private async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)

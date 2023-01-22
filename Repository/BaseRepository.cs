@@ -12,20 +12,20 @@ namespace th_pl.Repository
     public class BaseRepository<T> where T : BaseModel, new()
     {
         
-        protected SQLiteAsyncConnection Database;
+        SQLiteAsyncConnection Database;
         public BaseRepository()
         {
             
         }
 
 
-        protected virtual async Task Init()
+        async Task Init()
         {
             if (Database is not null)
                 return;
 
             Database ??= new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
-            await Database.CreateTableAsync<T>();
+            var result = await Database.CreateTableAsync<T>();
         }
 
         public async Task<List<T>> GetItemsAsync()
